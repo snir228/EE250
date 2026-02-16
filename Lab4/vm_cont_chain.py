@@ -2,7 +2,7 @@
 
 # Steve Cho (USC ID: 4314516349)
 # Sivan Nir (USC ID: 7594069996)
-# https://github.com/snir228/EE250/tree/main/Lab4
+# Github Link: https://github.com/snir228/EE250/tree/main/Lab4
 
 import paho.mqtt.client as mqtt
 import time
