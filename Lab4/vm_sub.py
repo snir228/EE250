@@ -1,6 +1,9 @@
 """EE 250L Lab 04 Starter Code
 Run vm_pub.py in a separate terminal on your VM."""
 
+# Steve Cho (USC ID: 4314516349)
+# Sivan Nir (USC ID: 7594069996)
+
 import paho.mqtt.client as mqtt
 
 """This function (or "callback") will be executed when this client receives 
@@ -14,14 +17,14 @@ def on_connect(client, userdata, flags, rc):
 
     print("Connected to server (i.e., broker) with result code "+str(rc))
     #replace user with your USC username in all subscriptions
-    client.subscribe("snir/ipinfo")
-    client.subscribe("snir/date")
-    client.subscribe("snir/time")
+    client.subscribe("smcho/ipinfo")
+    client.subscribe("smcho/datetime")
     
     #Add the custom callbacks by indicating the topic and the name of the callback handle
-    client.message_callback_add("snir/ipinfo", on_message_from_ipinfo)
-    client.message_callback_add("snir/date", on_message_from_curr_date)
-    client.message_callback_add("snir/time", on_message_from_curr_time)
+    client.message_callback_add("smcho/ipinfo", on_message_from_ipinfo)
+
+    client.message_callback_add("smcho/datetime", on_message_from_datetime)
+
 
 """This object (functions are objects!) serves as the default callback for 
 messages received when another node publishes a message this client is 
@@ -30,17 +33,12 @@ callback has not been registered using paho-mqtt's message_callback_add()."""
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
 
-
 #Custom message callback.
 def on_message_from_ipinfo(client, userdata, message):
-   print("Custom callback  - IP Message: "+message.payload.decode())
+   print("IP Information  - IP Message: "+message.payload.decode())
 
-def on_message_from_curr_date(client, userdata, message):
-   print("Custom callback  - Date: "+message.payload.decode())
-
-def on_message_from_curr_time(client, userdata, message):
-   print("Custom callback  - Time: "+message.payload.decode())
-
+def on_message_from_datetime(client, userdata, message):
+   print("Date and Time  - Date and Time Information: "+message.payload.decode())
 
 if __name__ == '__main__':
     

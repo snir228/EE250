@@ -1,6 +1,9 @@
 """EE 250L Lab 04 Starter Code
 Run vm_sub.py in a separate terminal on your VM."""
 
+# Steve Cho (USC ID: 4314516349)
+# Sivan Nir (USC ID: 7594069996)
+
 import paho.mqtt.client as mqtt
 import time
 from datetime import datetime
@@ -11,11 +14,9 @@ a connection acknowledgement packet response from the server. """
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
 
-
 if __name__ == '__main__':
     #get IP address
-    ip_address="127.0.0.1"
-    """your code here"""
+    ip_address = "127.0.0.1"
     #create a client object
     client = mqtt.Client()
     
@@ -39,21 +40,16 @@ if __name__ == '__main__':
 
     while True:
         #replace user with your USC username in all subscriptions
-        client.publish("snir/ipinfo", f"{ip_address}")
+        client.publish("smcho/ipinfo", f"{ip_address}")
         print("Publishing ip address")
         time.sleep(4)
 
         #get date and time 
-        """your code here"""
-        date_time=datetime.now()
-        curr_date=date_time.strftime("%Y-%m-%d")
-        curr_time=date_time.strftime("%H:%M:%S")
-
+        date_time = datetime.now()
+        t = date_time.time()
+        d = date_time.date()
+        
         #publish date and time in their own topics
-        """your code here"""
-        client.publish("snir/date", f"{curr_date}")
-        print("Publishing date")
-        time.sleep(4)
-        client.publish("snir/time", f"{curr_time}")
-        print("Publishing time")
+        client.publish("smcho/datetime", f"Date: {d.month}/{d.day}/{d.year} Hour: {t.hour}:{t.minute}:{t.second}")
+        print("Publishing date and time")
         time.sleep(4)
