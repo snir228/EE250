@@ -27,7 +27,7 @@ if __name__ == '__main__':
     #attach the on_connect() callback function defined above to the mqtt client
     client.on_connect = on_connect
 
-    client.connect(host="test.mosquitto.org", port=1883, keepalive=60)
+    client.connect(ip_address, port=1883, keepalive=60)
 
     """ask paho-mqtt to spawn a separate thread to handle
     incoming and outgoing mqtt messages."""
