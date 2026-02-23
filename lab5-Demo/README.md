@@ -62,13 +62,11 @@ Answer: It is important to plot the error bars as it visualizes the reliability 
 Question 9: What did you observe from the plot? How does the signal strength change as you move between locations?
 Why do you think signal strength is weaker in certain locations?
 
-Answer: We observed that the signal strength varies by location, but most of them are within the range of <= -67 dBm, where the signal can be used in any location. Looking at the table below, signal strength decreases as it moves away from where the router is (near the kitchen), which explains why the kitchen had the highest dBm mean with -62.4 dBm. The signal strength is weaker in certain locations where the router is far away or where objects might be interfering (walls or doors), making it hard for data to be transmitted.
+Answer: We observed that signal strength varies by location, but all are within the range of <= -67 dBm, indicating the signal can be used in any location. The graph shows the overall change as we moved between locations, since each location has a different layout of walls and other factors that affect the signal. Looking at the graph, we can see that the signal strength is the strongest in the living room with a value of around -40.9 dBm (using the table). This makes sense, as the router is in the living room; thus, the signal is strongest there. The bathroom and garage, on the other hand, are at least -67 dB, which makes sense, as the garage is farther away and the bathroom may be surrounded by multiple walls that cause interference with the signal.
 
-
-
- location  signal_strength_mean  signal_strength_std
-0      bedroom                 -71.8             1.600000
-1  living room                 -68.2             1.249000
-2      kitchen                 -62.4             7.102112
-3     bathroom                 -69.6             2.457641
-4       garage                 -74.4             2.764055
+location  signal_strength_mean  signal_strength_std
+0      bedroom                 -57.8             0.979796
+1  living room                 -40.9             1.374773
+2      kitchen                 -48.9             1.044031
+3     bathroom                 -67.0             1.414214
+4       garage                 -67.1             1.374773
