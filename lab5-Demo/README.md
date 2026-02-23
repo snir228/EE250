@@ -84,7 +84,7 @@ Answer: Significant packet loss for UDP begins to occur at the 14 meter mark. Fr
 
 Question 12: Why does UDP experience more packet loss than TCP?
 
-Answer: TCP possesses an acknowledgements protocol that retransmits and ensures data is delivered correctly. When a packet is lost, TCP detects it is missing through missing acknowledgement and retransmits it automatically. UDP sends packets continuously without checking whether they arrive successfully. As distance from the router incresases, the signal weakens and more packets are lost.
+Answer: TCP possesses an acknowledgements protocol that retransmits and ensures data is delivered correctly. When a packet is lost, TCP detects it is missing through missing acknowledgement and retransmits it automatically. UDP sends packets continuously without checking whether they arrive successfully. As distance from the router incresases, the signal weakens and more packets are lost for UDP.
 
 Question 13: 4. What happens if we increase the UDP bandwidth (-b 100M)?
 
