@@ -80,7 +80,7 @@ Answer: Wifi signal strength decreases with distance. For TCP, throughput genera
 
 Question 11: At what distance does signficant packet loss occur for UDP?
 
-Answer: Significant packet loss for UDP begins to occur at the 14 meter mark. From the plots, UDP remains stable at 10Mbps for distances 2m to 12m, indicating little to no packet loss. At 14m, UDP througput drops to 0Mbs.
+Answer: Significant packet loss for UDP occurs at 12 meters. At shorter distances (between 2 and 8 meters), UDP throuput remains stable at around 10Mbs, indicating minimal packet loss. However, UDP throughput decreases to values as low as 7.1 Mbps with increased distance.
 
 Question 12: Why does UDP experience more packet loss than TCP?
 
