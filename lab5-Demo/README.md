@@ -5,6 +5,9 @@
 - Sivan Nir (USC ID: 7594069996)
 
 ## Lab Question Answers
+
+## Part 1
+
 Question 1: What is dBm? What values are considered good and bad for WiFi signal strength?
 
 Answer: dBm is decibel milliwatts (logarithmic unit) representing the amount of power produced by the source (i.e., for WiFi, it's the WiFi signal strength). WiFi strength is considered generally good if it's within -60 dBm to -30 dBm. -67 dBm is the minimum. If it's below -67 dBm, then it's considered bad.
@@ -41,8 +44,7 @@ Question 5: In the Windows case, why do we need to convert the signal quality to
 HINT: https://learn.microsoft.com/en-us/windows/win32/api/wlanapi/ns-wlanapi-wlan_association_attributes?redirectedfrom=MSDN
 
 Answer:
-Signal quality must be converted to dBm for the Windows case, as 
-the value is given as a percentage (between 0 and 100), unlike Linux and Mac, where it returns in dBm. Thus, to have a consistent result across different OS, we must convert the value to dBm for Windows.
+Signal quality must be converted to dBm for the Windows case, as the value is given as a percentage (between 0 and 100), unlike Linux and Mac, where it returns in dBm. Thus, to have a consistent result across different OS, we must convert the value to dBm for Windows.
 
 Question 6: What is the standard deviation? Why is it useful to calculate it?
 
@@ -70,3 +72,26 @@ location  signal_strength_mean  signal_strength_std
 2      kitchen                 -48.9             1.044031
 3     bathroom                 -67.0             1.414214
 4       garage                 -67.1             1.374773
+
+## Part 2
+Question 10: How does distance affect TCP and UDP throughput?
+
+Answer: Wifi signal strength decreases with distance. For TCP, throughput general decreases gradually with distance because it uses a control and retransmission mechanism to ensure reliable delivery. This makes for a slower but stable decrease in throughput. For UDP, throughput remains relatively constant at shorter distances but can drop sharply at longer distances when packet loss becomes signficant.
+
+Question 11: At what distance does signficant packet loss occur for UDP?
+
+Answer: According to the tests ran, packet loss begins at 4 meteres and becomes severe by 6 to 8 meters, with most consistent and complete packet loss obser ved at 8 meters.
+
+Question 12: Why does UDP experience more packet loss than TCP?
+
+Answer: TCP possesses an acknowledgements protocol that retransmits and ensures data is delivered correctly. When a packet is lost, TCP detects it is missing and retransmits it automatically. UDP sends packets continuously without checking whether they arrive successfully. As distance from the router incresases, the signal weakens and more packets are lost.
+
+Question 13: 4. What happens if we increase the UDP bandwidth (-b 100M)?
+
+Answer: If we increase UDP bandwidth using -b 100M, the sender attempts to transmit data at a higher rate, which can exceed the capacity of the wireless network. The network can then become congested and packets will begin to drop due to overflow or corruption. UDP does not slow down, so increasing bandwidth leads to signficantly higher packet loss and would not necessarily increase throughput. 
+
+Question 14: Would performance be different on 5 GHz Wi-Fi vs. 2.4 GHz?
+Perfance differs whether 5 GHz or 2.4 GHz are used. The 5 GHz wifi would provide higher throughput because it has more available channels and less interference from common devices. This would allow TCP and UDP to achieve higher data rates with lower packet loss when closer to the router. With that said, 5 GHz signals attenuate more quickly with distance, so performance can degrade rapidly. 2.4 GHz has better range which makes it more reliable at longer distances. However, it does have lower maximum throughput. 
+
+Resources Used: https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
+https://www.intel.com/content/www/us/en/products/docs/wireless/2-4-vs-5ghz.html
