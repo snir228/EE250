@@ -76,7 +76,7 @@ location  signal_strength_mean  signal_strength_std
 ## Part 2
 Question 10: How does distance affect TCP and UDP throughput?
 
-Answer: Wifi signal strength decreases with distance. For TCP, throughput general decreases gradually with distance because it uses a control and retransmission mechanism to ensure reliable delivery. This makes for a slower but stable decrease in throughput. For UDP, throughput remains relatively constant at shorter distances but can drop sharply at longer distances when packet loss becomes signficant.
+Answer: Wifi signal strength decreases with distance. For TCP, throughput generally decreases gradually with distance. This is because it decreases the sending rate as it detects packet loss and retransmits to ensure reliable delivery. For UDP, throughput remains relatively constant at shorter distances but can drop sharply at longer distances when packet loss becomes significant. UDP maintains the sending rate unlike TCP, so when signal strength decreases with increasing distance, some packets will be lost. However, UDP doesn't retransmit, so throughput decreases.
 
 Question 11: At what distance does signficant packet loss occur for UDP?
 
@@ -84,14 +84,15 @@ Answer: Significant packet loss for UDP begins to occur at the 14 meter mark. Fr
 
 Question 12: Why does UDP experience more packet loss than TCP?
 
-Answer: TCP possesses an acknowledgements protocol that retransmits and ensures data is delivered correctly. When a packet is lost, TCP detects it is missing and retransmits it automatically. UDP sends packets continuously without checking whether they arrive successfully. As distance from the router incresases, the signal weakens and more packets are lost.
+Answer: TCP possesses an acknowledgment protocol that retransmits and ensures data is delivered correctly. When a packet is lost, TCP detects it is missing through a missing acknowledgement and retransmits it automatically. UDP sends packets continuously without checking whether they arrive successfully. As the distance from the router increases, the signal weakens, and more packets are lost for UDP.
 
 Question 13: 4. What happens if we increase the UDP bandwidth (-b 100M)?
 
-Answer: If we increase UDP bandwidth using -b 100M, the sender attempts to transmit data at a higher rate, which can exceed the capacity of the wireless network. The network can then become congested and packets will begin to drop due to overflow or corruption. UDP does not slow down, so increasing bandwidth leads to signficantly higher packet loss and would not necessarily increase throughput. 
+Answer: If we increase UDP bandwidth using -b 100M, the sender attempts to transmit data at a higher rate, which can exceed the capacity of the wireless network, or the signal strength cannot compensate for that rate. Thus, this could lead to packet losses. UDP does not automatically lower the sending rate, so increasing bandwidth leads to significantly higher packet loss and would not necessarily increase throughput. 
 
-Question 14: Would performance be different on 5 GHz Wi-Fi vs. 2.4 GHz?
-Perfance differs whether 5 GHz or 2.4 GHz are used. The 5 GHz wifi would provide higher throughput because it has more available channels and less interference from common devices. This would allow TCP and UDP to achieve higher data rates with lower packet loss when closer to the router. With that said, 5 GHz signals attenuate more quickly with distance, so performance can degrade rapidly. 2.4 GHz has better range which makes it more reliable at longer distances. However, it does have lower maximum throughput. 
+Question 14: Would performance be different on 5 GHz wifi vs. 2.4 GHz?
+
+Answer: Performance differs whether 5 GHz or 2.4 GHz are used. The 5 GHz wifi would provide higher throughput at shorter distances because it has more available channels and less interference from common devices. This would allow TCP and UDP to achieve higher data rates with lower packet loss when closer to the router. With that said, 5 GHz signals attenuate more quickly with distance, so performance can degrade rapidly. 2.4 GHz has a better range, which makes it more reliable at longer distances. However, it does have a lower maximum throughput. Thus, the trade-off is higher performance but shorter range (5 GHz) vs. lower performance but longer range (2.4 GHz).
 
 Resources Used: https://www.centurylink.com/home/help/internet/wireless/which-frequency-should-you-use.html
 https://www.intel.com/content/www/us/en/products/docs/wireless/2-4-vs-5ghz.html
