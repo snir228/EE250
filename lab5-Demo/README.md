@@ -76,7 +76,7 @@ location  signal_strength_mean  signal_strength_std
 ## Part 2
 Question 10: How does distance affect TCP and UDP throughput?
 
-Answer: Wifi signal strength decreases with distance. For TCP, throughput generally decreases gradually with distance because it uses a control and retransmission mechanism to ensure reliable delivery. This makes for a slight but stable decrease in throughput. For UDP, throughput remains relatively constant at shorter distances but can drop sharply at longer distances when packet loss becomes significant.
+Answer: Wifi signal strength decreases with distance. For TCP, throughput generally decreases gradually with distance. This is because it decreases the sending rate as it detects packet loss and retransmits to ensure reliable delivery. For UDP, throughput remains relatively constant at shorter distances but can drop sharply at longer distances when packet loss becomes significant. UDP maintains the sending rate unlike TCP, so when signal strength decreases with increasing distance, some packets will be lost. However, UDP doesn't retransmit, so throughput decreases.
 
 Question 11: At what distance does signficant packet loss occur for UDP?
 
