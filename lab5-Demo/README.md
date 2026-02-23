@@ -88,7 +88,7 @@ Answer: TCP possesses an acknowledgements protocol that retransmits and ensures 
 
 Question 13: 4. What happens if we increase the UDP bandwidth (-b 100M)?
 
-Answer: If we increase UDP bandwidth using -b 100M, the sender attempts to transmit data at a higher rate, which can exceed the capacity of the wireless network. The network can then become congested and packets will begin to drop due to overflow or corruption. UDP does not slow down, so increasing bandwidth leads to signficantly higher packet loss and would not necessarily increase throughput. 
+Answer: If we increase UDP bandwidth using -b 100M, the sender attempts to transmit data at a higher rate, which can exceed the capacity of the wireless network or the signal strength cannot compensate that rate. Thus, this could lead to packets losses. UDP does not automatically lower the sending rate, so increasing bandwidth leads to signficantly higher packet loss and would not necessarily increase throughput. 
 
 Question 14: Would performance be different on 5 GHz Wi-Fi vs. 2.4 GHz?
 Performance differs whether 5 GHz or 2.4 GHz are used. The 5 GHz wifi would provide higher throughput at shorter distance because it has more available channels and less interference from common devices. This would allow TCP and UDP to achieve higher data rates with lower packet loss when closer to the router. With that said, 5 GHz signals attenuate more quickly with distance, so performance can degrade rapidly. 2.4 GHz has better range which makes it more reliable at longer distances. However, it does have lower maximum throughput. Thus, the tradeoff is higher performance, but shorter range (5 Ghz) vs. lower performance, but longer range (2.4 GHz).
