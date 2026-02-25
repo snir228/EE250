@@ -28,5 +28,7 @@ while True:
 
     setText_norefresh(top + "\n" + f"{distance}")
     
+    time.sleep(0.2)
+    
   except IOError:
     print("Error")
