@@ -31,7 +31,7 @@ while True:
 
     setText_norefresh(top + "\n" + str(distance))
     
-    time.sleep(0.5)
+    time.sleep(0.2)
     
   except IOError:
     print("Error")
