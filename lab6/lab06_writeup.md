@@ -55,8 +55,8 @@ least two terminal commands.
 
 Answer:
 I would first check what is being displayed on the screen and avoid using spaces to determine whether the space is being written or the text isn't displaying at all. I would also check whether the I2C protocol is being utilized by using the following command:
-# i2cdetect 1 # i2cdetect is used to scan for an I2C bus 1 and the devices that are connected to that
+- i2cdetect 1 # i2cdetect is used to scan for an I2C bus 1 and the devices that are connected to that
 If there exist numbers on the grid, then the protocol is used
 Another command I would use is:
-# lsmod | grep i2c # Listing all the modules and filtering the module named i2c
+- lsmod | grep i2c # Listing all the modules and filtering the module named i2c
 If an I2C module exists, I2C is activated.
