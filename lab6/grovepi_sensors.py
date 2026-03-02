@@ -27,16 +27,17 @@ while True:
 
     # TODO: format LCD text according to threshhold
     top = str(threshold)
-	top += "cm"
-    if distance < threshold:
+    top += "cm"
+    if distance <threshold:
       top += " OBJ PRES"
     placeholder_len = 16 - len(str(top))
-    for i in range(0,placeholder_len): # Add remaining columns in the top row with spaces to delete past texts
-	    top += " "
+    for i in range(0,placeholder_len):
+      top += " "
 
-    setText_norefresh(top + "\n" + str(distance)) # Set text without clearing the screen
+    setText_norefresh(top + "\n" + str(distance) + "cm")
     
     time.sleep(0.2)
     
   except IOError:
     print("Error")
+
