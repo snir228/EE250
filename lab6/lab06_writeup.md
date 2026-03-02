@@ -15,12 +15,12 @@ git clone git@github.com:my-name/my-imaginary-repo.git
 (Note: create the file using the `touch` command)
 
 Answer:
-cd my-imaginary-repo
-touch my_second_file.py 
-echo 'print("Hello World")' > my_second_file.py
-git add my_second_file.py
-git commit -m "Additional File"
-git push origin main
+- cd my-imaginary-repo
+- touch my_second_file.py 
+- echo 'print("Hello World")' > my_second_file.py
+- git add my_second_file.py
+- git commit -m "Additional File"
+- git push origin main
 
 
 4.2. Describe the workflow you adopted for this lab (i.e. did you develop on your VM
