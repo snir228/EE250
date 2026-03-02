@@ -47,10 +47,10 @@ The ADC module in the ATmega328P converts an analog signal to a 10-bit digital s
 4.5. Your LCD RGB Backlight screen is not displaying any text even though your code executes without errors. Describe how you would debug the issue. Include at least two terminal commands.
 
 Answer:
-I would first check what is being displayed on the screen and avoid using spaces to determine whether the space is being written or the text isn't displaying at all. I would also check whether the I2C protocol is being utilized by using the following command:
+I would first check what is being displayed on the screen and avoid using spaces to determine whether the space is being written or the text isn't displaying at all. I would also check whether the I2C protocol is being utilized and RPi can detect the device by using the following command:
 - i2cdetect 1 # i2cdetect is used to scan for an I2C bus 1 and the devices that are connected to that
-
-If there exist numbers on the grid, then the protocol is used. Another command I would use is:
+If there exist numbers on the grid, then the protocol is being used. This is a way to check whether the RPi is using the I2C protocol and whether the display uses it to communicate. If there are no numbers on the grid, I would try using a different bus number. Another command I would use is:
 - lsmod | grep i2c # Listing all the modules and filtering the module named i2c
-
-If an I2C module exists, I2C is activated.
+If an I2C module exists, I2C is activated. This is a way to check if the I2C protocol is activated. If it is not activated, I would use the command:
+- sudo raspi-config
+And then go to the I2C setting and activate. After, I will reboot (sudo reboot).
