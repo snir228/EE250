@@ -30,7 +30,7 @@ while True:
     if distance < threshold:
       top += " OBJ PRES"
     placeholder_len = 16 - len(str(top))
-    for i in range(0,placeholder_len):
+    for i in range(0,placeholder_len): # Add remaining columns in the top row with spaces to delete past texts
 	    top += " "
 
     setText_norefresh(top + "\n" + str(distance))
