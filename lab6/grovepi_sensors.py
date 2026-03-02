@@ -27,7 +27,7 @@ while True:
 
     # TODO: format LCD text according to threshhold
     top =str(threshold)
-    if distance <threshold:
+    if distance < threshold:
       top += " OBJ PRES"
     placeholder_len = 16 - len(str(top))
     for i in range(0,placeholder_len):
