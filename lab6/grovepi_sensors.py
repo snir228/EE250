@@ -27,6 +27,7 @@ while True:
 
     # TODO: format LCD text according to threshhold
     top = str(threshold)
+	top += "cm"
     if distance < threshold:
       top += " OBJ PRES"
     placeholder_len = 16 - len(str(top))
