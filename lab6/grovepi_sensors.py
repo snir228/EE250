@@ -33,7 +33,7 @@ while True:
     for i in range(0,placeholder_len): # Add remaining columns in the top row with spaces to delete past texts
 	    top += " "
 
-    setText_norefresh(top + "\n" + str(distance))
+    setText_norefresh(top + "\n" + str(distance)) # Set text without clearing the screen
     
     time.sleep(0.2)
     
