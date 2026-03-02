@@ -1,6 +1,6 @@
 ## Team Members
-- Steve Cho (USC ID: 4314516349)
-- Sivan Nir (USC ID: 7594069996)
+##- Steve Cho (USC ID: 4314516349)
+##- Sivan Nir (USC ID: 7594069996)
 
 import sys
 sys.path.append('~/Dexter/GrovePi/Software/Python')
