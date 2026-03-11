@@ -1,0 +1,65 @@
+import time
+import RPi.GPIO as GPIO
+import Adafruit_GPIO.SPI as SPI
+import Adafruit_MCP3008
+
+#using physical pin 11 to blink an LED
+GPIO.setmode(GPIO.BOARD)
+chan_list = [11]
+GPIO.setup(chan_list, GPIO.OUT)
+
+# Hardware SPI configuration:
+SPI_PORT   = 0
+SPI_DEVICE = 0
+mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
+
+# by taking readings and printing them out, find
+# appropriate threshold levels and set them 
+# accordingly. Then, use them to determine
+# when it is light or dark, quiet or loud.
+lux_treshold=0  # change this value
+sound_treshold=0 # change this value
+
+
+while True: 
+  for i in range(0, 5):
+    time.sleep(0.5)
+    GPIO.output(chan_list, GPIO.HIGH)
+    time.sleep(0.5) 
+    GPIO.output(chan_list, GPIO.LOW)
+  
+  for i in range(0, 50):
+    val = mcp.read_adc(0)
+    print(val)
+    if (val > lux_treshold):
+      print("bright")
+    else:
+      print("dark")
+    time.sleep(0.1) 
+  
+  for i in range(0, 4):
+    time.sleep(0.5)
+    GPIO.output(chan_list, GPIO.HIGH)
+    time.sleep(0.5) 
+    GPIO.output(chan_list, GPIO.LOW)
+
+  for i in range(0, 50):
+    val = mcp.read_adc(0)
+    print(val)
+    time.sleep(0.1) 
+  
+  for i in range(0, 50):
+    val = mcp.read_adc(0)
+    if(val > sound_treshold):
+      GPIO.output(chan_list, GPIO.HIGH)
+      time.sleep(0.1)
+      GPIO.output(chan_list, GPIO.LOW)
+    else:
+      print(val)
+      time.sleep(0.1) 
+  #Following commands control the state of the output
+  # GPIO.output(pin, GPIO.HIGH)
+  # GPIO.output(pin, GPIO.LOW)
+
+  # get reading from adc 
+  # mcp.read_adc(adc_channel)
