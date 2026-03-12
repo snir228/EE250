@@ -22,12 +22,14 @@ sound_treshold=160 # change this value
 
 
 while True: 
+  # LED blinking 5 times with 500 ms interval between on and off
   for i in range(0, 5):
     time.sleep(0.5)
     GPIO.output(chan_list, GPIO.HIGH)
     time.sleep(0.5) 
     GPIO.output(chan_list, GPIO.LOW)
-  
+
+  # Light sensor reading and printing value every 100 ms for 5 seconds
   for i in range(0, 50):
     val = mcp.read_adc(0)
     print(val)
@@ -36,13 +38,15 @@ while True:
     else:
       print("dark")
     time.sleep(0.1) 
-  
+
+  # LED blinking 4 times with 200 ms interval between on and off
   for i in range(0, 4):
     time.sleep(0.2)
     GPIO.output(chan_list, GPIO.HIGH)
     time.sleep(0.2) 
     GPIO.output(chan_list, GPIO.LOW)
-  
+    
+  # Sound sensor reading every 100 ms for 5 seconds. LED will be turned on for 100 ms everytime the sound magnitude is greater than the threshold. It maintains the total 5 seconds
   for i in range(0, 50):
     val = mcp.read_adc(1)
     print(val)
