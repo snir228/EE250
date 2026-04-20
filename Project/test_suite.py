@@ -6,6 +6,7 @@ import RPi.GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 #pin 11 led
