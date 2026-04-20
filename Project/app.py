@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import scrolledtext
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
-import app
 
 
 BG = "#5C89D2"
@@ -54,7 +53,19 @@ llm_box = scrolledtext.ScrolledText(output_frame, width=60, height=12,
 llm_box.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="ew")
 
 def on_click1():
-    avg_label.config  
+    success = ssh_test.fetch()
+    if not success:
+        return
+    fig1, fig2, fig3, left, right, avg = process.generate_graphs("./rpi_output/data.csv")
+    for i, (fig, canvas) in enumerate(zip([fig1, fig2, fig3], canvases)):
+        canvas.figure = fig
+        canvas.draw()
+    mean     = sum(avg) / len(avg)
+    variance = sum((x - mean)**2 for x in avg) / len(avg)
+    trend    = "Increasing" if avg[-1] > avg[0] else ("Decreasing" if avg[-1] < avg[0] else "Stable")
+    avg_label.config(text=f"Average Intensity: {round(mean, 2)}")
+    var_label.config(text=f"Variance: {round(variance, 2)}")
+    trend_label.config(text=f"Trend: {trend}") 
 
 def on_click2():
     llm_box.config(state=tk.NORMAL)
