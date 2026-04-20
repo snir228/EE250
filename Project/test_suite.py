@@ -10,6 +10,7 @@ matplotlib.use('Agg') #ssh does not allow display plot
 import matplotlib.pyplot as plt
 
 import csv
+import os
 
 #pin 11 led
 GPIO.setmode(GPIO.BOARD)
