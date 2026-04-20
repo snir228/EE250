@@ -3,8 +3,8 @@ from tkinter import scrolledtext
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import app
-import ssh_test
 import process
+import ssh_test
 
 
 BG = "#5C89D2"
