@@ -9,6 +9,8 @@ import matplotlib
 matplotlib.use('Agg') #ssh does not allow display plot
 import matplotlib.pyplot as plt
 
+import csv
+
 #pin 11 led
 GPIO.setmode(GPIO.BOARD)
 chan_list = [11]
@@ -70,6 +72,14 @@ def run():
   fig3 = charts(timestamps, avg_value,   "Average Intensity", "mediumseagreen")
   
   llm_text = "LLM response" #replace
+
+  #added values into csv
+  os.makedirs("output", exist_ok=True)
+  with open("output/data.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["timestamp", "left", "right", "average"])
+    for i in range(len(timestamps)):
+        writer.writerow([timestamps[i], left_value[i], right_value[i], avg_value[i]])
   
   return fig1, fig2, fig3, llm_text, left_value, right_value, avg_value
 
