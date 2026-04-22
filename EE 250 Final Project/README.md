@@ -35,9 +35,9 @@ Python Standard Libraries:
 SPECIAL INSTRUCTION FOR Adafruit_GPIO and Adafruit_MCP3008:
 
 1: First, ssh into your Raspberry Pi and execute the command:
-sudo raspi-config
+sudo raspi-config  
 2: Select Interfacing Options -->
-Select SPI --> Select Yes --> Select OK
+Select SPI --> Select Yes --> Select OK  
 3: Install the library via the command:
 sudo pip3 install adafruit-mcp3008
 
