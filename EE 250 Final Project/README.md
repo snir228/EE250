@@ -7,9 +7,9 @@ Execution Steps:
 1. Download all the necessary libraries
 
 Install command: 
-pip install <library name>
+pip install [library name]
 or
-pip3 install <library name>
+pip3 install [library name]
 
 Install Required Library:
 - matplotlib
