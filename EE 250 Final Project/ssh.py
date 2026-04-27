@@ -1,6 +1,6 @@
 import paramiko, os
 
-RPI_IP   = "172.20.10.3"
+RPI_IP = "172.20.10.3"
 RPI_USER = "pi"
 RPI_PASS = "000"
 RPI_PATH = "/home/pi/EE250/ee250_final_project"
