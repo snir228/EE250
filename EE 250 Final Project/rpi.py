@@ -1,17 +1,7 @@
-import time
-# import RPi.GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
-import matplotlib
-matplotlib.use('Agg') #ssh does not allow display plot
-import matplotlib.pyplot as plt
 import csv
 import os
-
-#pin 11 led
-# GPIO.setmode(GPIO.BOARD)
-# chan_list = [11]
-# GPIO.setup(chan_list, GPIO.OUT)
 
 # SPI Configuration
 SPI_PORT   = 0
@@ -42,13 +32,6 @@ def collect_data():
     avg_value.append(avg)
     timestamps.append(round(i * sample_interval, 2))
 
-  #   #turn led on when either exceeds threshold
-  #   if left > lux_threshold or right > lux_threshold:
-  #     GPIO.output(chan_list, GPIO.HIGH)
-  #   else:
-  #     GPIO.output(chan_list, GPIO.LOW)
-  #   time.sleep(sample_interval)
-  # GPIO.output(chan_list, GPIO.LOW) #led off
   return left_value, right_value, avg_value, timestamps
 
 # Records the collected data to csv file
@@ -65,6 +48,6 @@ def record():
   
   return True
 
+# Main Function
 if __name__ == "__main__":
   record()
-  # GPIO.cleanup()
