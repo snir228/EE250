@@ -10,7 +10,7 @@ mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
 # Parameters
 sample_interval = 0.1
-num_samples     = 50
+num_samples = 50
 
 # Collects light intensity data using mcp.read_adc() and return following arrays:
 # left, right, average and timestamps arrays
