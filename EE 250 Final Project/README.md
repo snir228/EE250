@@ -20,7 +20,6 @@ Install Required Library:
 - requests
 - geocoder
 - numpy
-- RPI.GPIO
 - Adafruit_GPIO
 - Adafruit_MCP3008
 
