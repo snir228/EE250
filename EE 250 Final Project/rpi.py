@@ -4,7 +4,7 @@ import csv
 import os
 
 # SPI Configuration
-SPI_PORT   = 0
+SPI_PORT = 0
 SPI_DEVICE = 0
 mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
@@ -16,15 +16,15 @@ num_samples = 50
 # left, right, average and timestamps arrays
 def collect_data():
   
-  left_value  = []
+  left_value = []
   right_value = []
-  avg_value   = []
-  timestamps  = []
+  avg_value  = []
+  timestamps = []
   
   for i in range(num_samples):
-    left  = mcp.read_adc(0) #CH0 J2
+    left = mcp.read_adc(0) #CH0 J2
     right = mcp.read_adc(1) #CH1 J3
-    avg   = (left + right) / 2
+    avg  = (left + right) / 2
     
     left_value.append(left)
     right_value.append(right)
