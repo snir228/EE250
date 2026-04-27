@@ -45,9 +45,9 @@ sudo pip3 install adafruit-mcp3008
 
 3. *IMPORTANT*: On ssh.py, revise RPI_IP, RPI_USER, and RPI_PASS to your Raspberry Pi IP address, username, and password. Also, revise the PATH variable to the path where rpi.py is in your Raspberry Pi
 
-4. On app.py, go to where the OpenAI API key is (client = OpenAI(api_key="key")). Paste the OpenAI API key in where "key" is (must be a string)
+4. On app.py, go to where the OpenAI API key is (Line: client = OpenAI(api_key="key")). Paste the OpenAI API key in where "key" is (must be a string)
 
-5. Connect the Lab 10 PCB board with two light sensors connected to the RPI
+5. Connect the Lab 10 PCB board with two light sensors connected to the Raspberry Pi
 
 6. On the terminal, execute:
 python3 app.py
@@ -56,7 +56,7 @@ python app.py
 
 7. Press the 'Process Light Intensity' button and wait for the results to pop up
 
-8. Press the 'LLM Activity Suggestion' button and type whether you are 'inside' or 'outside.'
+8. Press the 'LLM Activity Suggestion' button and type 'inside' or 'outside' depending on where you are
 
 9. Wait a few seconds, and the suggestions will show up
 
