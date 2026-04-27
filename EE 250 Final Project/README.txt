@@ -11,6 +11,7 @@ Inside Main Folder:
 - process.py
 - README.txt
 - ssh.py
+    * ssh.py file requires ip address and password of specific rpi to transfer data accordingly *
 - weather.py
 
 Within your Raspberry Pi:
