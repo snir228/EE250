@@ -9,7 +9,7 @@ Inside Main Folder:
 - app.py
 - calculation.py
 - process.py
-- README.md
+- README.txt
 - ssh.py
 - weather.py
 
