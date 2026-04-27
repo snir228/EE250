@@ -1,6 +1,8 @@
 import csv
 import matplotlib.pyplot as plt
 
+# Claude gave suggestion to process graphs within the laptop rather than inside the Raspberry Pi
+
 # Read csv
 def load_csv(filepath="output/data.csv"):
     timestamps = []
