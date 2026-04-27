@@ -25,12 +25,14 @@ label.pack(pady = (20, 0))
 output_frame = tk.LabelFrame(root, text="Light Intensity Graphs", bg=BG, fg=FG, bd=2, labelanchor="n", font=(FONT, 15))
 output_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
+# Help from Claude
 for col in range(3):
     output_frame.columnconfigure(col, weight=1) # Control graph stretch horizontally
 output_frame.rowconfigure(0, weight=1) # Control graph stretch vertically
 output_frame.rowconfigure(2, weight=1) # Control textbox stretch vertically
 
 # 3 Graphs Placeholders
+# Help from Claude
 canvases = []
 for i in range(3):
     fig, ax = plt.subplots(figsize=(2, 1.5))
@@ -52,10 +54,12 @@ light_label.grid(row=0, column=1, padx=10, pady=4)
 trend_label = tk.Label(stats_frame, text="Trend: --", bg=BG, fg=FG, font=(FONT, 15))
 trend_label.grid(row=0, column=2, padx=10, pady=4)
 
+# Help from Claude
 for col in range(3):
      stats_frame.columnconfigure(col, weight=1) # Stretches the data stats box horizontally
 
 # Text box section
+# Help from Claude
 text_box = scrolledtext.ScrolledText(output_frame, width=60, height=12,
                                      bg="white", fg="black", state=tk.DISABLED, font=(FONT, 15)) # Add scrolling functionality
 text_box.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="nsew")
@@ -89,7 +93,7 @@ def process_light():
             light_cond = "Very Bright"
         
         # insert to the processed data section
-        avg_label.config(text=f"Average Intensity: {avg_val:.2f}")
+        avg_label.config(text=f"Average Intensity: {avg_val:.2f}") # Floating point as average can be decimal
         light_label.config(text=f"Light Level: {light_cond}")
         trend_label.config(text=f"Trend: {trend_val}")
 
@@ -159,7 +163,8 @@ def llm_suggestions():
     with open("./rpi_output/data.csv") as f:
         csv_data = f.read()
 
-    # Prompt with the relevant informations given to the LLM (ChatGPT)
+    # Prompt with the relevant informations given to the LLM (ChatGPT) 
+    # Prompt format guided by Claude
     prompt = f"""You are an activity advisor based on light-intensity and weather. Based on the following light sensor readings and weather condition, suggest activities.
 
 User Location: {user_setting}
