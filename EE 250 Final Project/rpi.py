@@ -9,7 +9,6 @@ SPI_DEVICE = 0
 mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 
 # Parameters
-lux_threshold  = 200 
 sample_interval = 0.1
 num_samples     = 50
 
