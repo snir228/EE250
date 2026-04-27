@@ -45,7 +45,7 @@ sudo pip3 install adafruit-mcp3008
 
 3. *IMPORTANT*: On ssh.py, revise RPI_IP, RPI_USER, and RPI_PASS to your Raspberry Pi IP address, username, and password. Also, revise the PATH variable to the path where rpi.py is in your Raspberry Pi
 
-4. On app.py, go to where the OpenAI API key is (client = OpenAI(api_key="key")). Paste it in the OpenAI API key where "key" is (has to be a string)
+4. On app.py, go to where the OpenAI API key is (client = OpenAI(api_key="key")). Paste the OpenAI API key in where "key" is (must be a string)
 
 5. Connect the Lab 10 PCB board with two light sensors connected to the RPI
 
