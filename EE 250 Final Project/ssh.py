@@ -6,6 +6,7 @@ RPI_PASS = "000"
 RPI_PATH = "/home/pi/EE250/ee250_final_project"
 
 # ssh connection using paramiko
+# Help from Claude
 def fetch():
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # automatically accept any host key
