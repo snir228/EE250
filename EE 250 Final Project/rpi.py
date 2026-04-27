@@ -24,7 +24,7 @@ def collect_data():
   for i in range(num_samples):
     left = mcp.read_adc(0) #CH0 J2
     right = mcp.read_adc(1) #CH1 J3
-    avg  = (left + right) / 2
+    avg = (left + right) / 2
     
     left_value.append(left)
     right_value.append(right)
