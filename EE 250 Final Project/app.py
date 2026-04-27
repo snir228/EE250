@@ -136,8 +136,8 @@ def llm_suggestions():
     root.update()
 
     # use average data to calculate average value, variance, and trend
-    avg_val   = calculation.get_average(avg_data)
-    var_val   = calculation.get_variance(avg_data)
+    avg_val = calculation.get_average(avg_data)
+    var_val = calculation.get_variance(avg_data)
     trend_val = calculation.get_trend(avg_data)
 
     # get current user location
