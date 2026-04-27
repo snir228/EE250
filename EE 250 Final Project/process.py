@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 # Read csv
 def load_csv(filepath="output/data.csv"):
     timestamps = []
-    left       = []
-    right      = []
-    avg        = []
+    left = []
+    right = []
+    avg = []
     with open(filepath) as f:
         reader = csv.DictReader(f)
         for row in reader:
