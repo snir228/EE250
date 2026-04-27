@@ -1,7 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 
-#read csv
+# Read csv
 def load_csv(filepath="output/data.csv"):
     timestamps = []
     left       = []
@@ -16,9 +16,9 @@ def load_csv(filepath="output/data.csv"):
             avg.append(float(row["average"]))
     return timestamps, left, right, avg
 
-#generate figure
+# Generate figure
+# Help from Claude
 def make_chart(timestamps, values, title, color):
-    """Generate a single dark-themed figure."""
     fig, ax = plt.subplots(figsize=(2, 1.5))
     ax.plot(timestamps, values, color=color)
     ax.set_title(title, color="black", fontsize=7)
