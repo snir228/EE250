@@ -2,6 +2,20 @@ Team Members
 - Steve Cho (USC ID: 4314516349)
 - Sivan Nir (USC ID: 7594069996)
 
+REQUIRED FOLDER/FILE STRUCTURE:
+
+Inside Main Folder on your Laptop:
+- rpi_output folder
+- app.py
+- calculation.py
+- process.py
+- README.md
+- ssh.py
+- weather.py
+
+Within your Raspberry Pi:
+- rpi.py
+
 Execution Steps:
 
 1. Download all the necessary libraries
@@ -13,9 +27,7 @@ pip3 install [library name]
 
 Install Required Library:
 - matplotlib
-- ssh
 - openai
-- csv
 - paramiko
 - requests
 - geocoder
@@ -28,8 +40,7 @@ Python Standard Libraries:
 - statistics
 - tkinter
 - json
-- time
-- os
+- csv
 
 SPECIAL INSTRUCTION FOR Adafruit_GPIO and Adafruit_MCP3008:
 
